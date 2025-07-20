@@ -1,15 +1,28 @@
 {
-  "name": "typewriter-text-angular",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "typewriter-text-effect",       
+  "version": "1.0.0",                      
+  "description": "Simple typewriter text animation in JS/TS",
+  "main": "dist/index.js",                
+  "types": "dist/index.d.ts",            
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "typescript": "^5.8.3"
-  }
+  "files": [
+    "dist"                               
+  ],
+  "keywords": [
+    "typewriter",
+    "text",
+    "animation",
+    "typescript",
+    "npm",
+    "vanilla-js"
+  ],
+  "author": "Rajat Singh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RajatSinghrs/typewriter-text.git"
+  },
+  "homepage": "https://github.com/RajatSinghrs/typewriter-text#readme"
 }
