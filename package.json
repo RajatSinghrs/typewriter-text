@@ -1,14 +1,14 @@
 {
-  "name": "typewriter-text-effect",       
-  "version": "1.0.0",                      
+  "name": "typewriter-text-effect",
+  "version": "1.0.1",
   "description": "Simple typewriter text animation in JS/TS",
-  "main": "dist/index.js",                
-  "types": "dist/index.d.ts",            
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
   "files": [
-    "dist"                               
+    "dist"
   ],
   "keywords": [
     "typewriter",
