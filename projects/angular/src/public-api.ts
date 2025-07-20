@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { TypewriterDirective } from './lib/typewriter.directive';
+// import { NgModule } from '@angular/core';
+// import { TypewriterDirective } from './lib/typewriter.directive';
 
-@NgModule({
-  declarations: [TypewriterDirective],
-  exports: [TypewriterDirective]
-})
-export class TypewriterModule {}
+// @NgModule({
+//   declarations: [TypewriterDirective],
+//   exports: [TypewriterDirective]
+// })
+// export class TypewriterModule {}
 
-export { TypewriterDirective };
+// export { TypewriterDirective };
