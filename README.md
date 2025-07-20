@@ -1,6 +1,6 @@
 # typewriter-text-effect
 
-A simple and customizable typewriter text animation component/directive/package for modern JavaScript/TypeScript/Angular apps.
+A simple and customizable typewriter text animation component/directive/package for modern JavaScript/TypeScript/Angular apps
 
 ## 📦 Installation
 
