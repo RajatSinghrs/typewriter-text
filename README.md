@@ -9,3 +9,4 @@ Angular wrapper for [typewriter-text-effect](https://www.npmjs.com/package/typew
 
 ```bash
 npm install typewriter-text-effect
+
