@@ -2,10 +2,10 @@ import { Component, ElementRef, Input, AfterViewInit, OnDestroy, ViewChild } fro
 import { Typewriter, TypewriterOptions } from 'typewriter-text-effect';
 
 @Component({
-    selector: 'lib-typewriter',
-    standalone: true,
-    template: `<span #typewriterText><span></span></span>`,
-    styles: [`
+  selector: 'lib-typewriter',
+  standalone: true,
+  template: `<span #typewriterText><span></span></span>`,
+  styles: [`
     .typewriter-cursor {
       animation: blink 0.7s infinite;
     }
@@ -17,21 +17,21 @@ import { Typewriter, TypewriterOptions } from 'typewriter-text-effect';
   `],
 })
 export class TypewriterComponent implements AfterViewInit, OnDestroy {
-    @Input() options!: TypewriterOptions;
-    @ViewChild('typewriterText', { static: true }) elRef!: ElementRef;
+  @Input() options!: TypewriterOptions;
+  @ViewChild('typewriterText', { static: true }) elRef!: ElementRef;
 
-    private typewriter!: Typewriter;
+  private typewriter!: Typewriter;
 
-    ngAfterViewInit() {
-        if (this.options && this.elRef) {
-            this.typewriter = new Typewriter(this.elRef.nativeElement, this.options);
-            this.typewriter.start();
-        }
+  ngAfterViewInit() {
+    if (this.options && this.elRef) {
+      this.typewriter = new Typewriter(this.elRef.nativeElement, this.options);
+      this.typewriter.start();
     }
+  }
 
-    ngOnDestroy() {
-        if (this.typewriter) {
-            this.typewriter.stop();
-        }
+  ngOnDestroy() {
+    if (this.typewriter) {
+      this.typewriter.stop();
     }
+  }
 }
