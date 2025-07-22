@@ -1,6 +1,6 @@
 {
   "name": "typewriter-text-effect",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Simple typewriter text animation in JS/TS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
