@@ -1,5 +1,5 @@
 /*
  * Public API Surface of typewriter
  */
-
-export * from './lib/typewriter.componenet'
+export * from './lib/typewriter.directive';
+export * from './lib/typewriter.module';
