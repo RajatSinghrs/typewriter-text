@@ -1,1 +1,9 @@
-<lib-typewriter [options]="typewriterOptions"></lib-typewriter>
+<h2>Angular Typewriter Demo</h2>
+
+<div [typewriter]="[
+    'Standalone App Demo',
+    'Typing with Style 🧑‍💻',
+    'Reusable Angular Directive!'
+  ]" [speed]="100" [deleteSpeed]="50" [delayBetween]="1000" [pauseBetweenLoops]="2000" [loop]="true" [cursor]="true"
+    [cursorChar]="'❚'" [startDelay]="500" [pauseOnHover]="true" [randomSpeed]="true" [autoStart]="true"
+    [textStyleClass]="'typewriter-text-style'"></div>

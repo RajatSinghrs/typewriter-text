@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { TypewriterComponent } from '../../../typewriter/src/public-api';
 import { RouterModule } from '@angular/router';
+import { TypewriterModule } from '../../../typewriter/src/public-api';
 
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [RouterModule,TypewriterComponent],
+  imports: [RouterModule,TypewriterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
