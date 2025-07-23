@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TypewriterComponent } from '../../../typewriter/src/public-api';
+import { TypewriterModule } from '../../../typewriter/src/lib/typewriter.module';
 @NgModule({
   declarations: [
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-        AppComponent,
-    TypewriterComponent
+    AppComponent,
+    TypewriterModule
   ],
   providers: [],
   bootstrap: []
