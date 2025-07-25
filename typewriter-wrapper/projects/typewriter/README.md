@@ -40,12 +40,17 @@ export class AppModule {}
 
 ```html
 <div
-  [typewriter]="['Hello World!', 'From Angular 🅰️']"
-  [speed]="100"
-  [loop]="true"
-  [pauseOnHover]="true"
-  [textStyleClass]="'my-custom-text-style'"
-></div>
+    typewriter
+    [typewriter]="['fullstack developer', 'freelancer', 'football player']"
+    [loop]="true"
+    [speed]="80"
+    [deleteSpeed]="40"
+    [delayBetween]="1000"
+    [cursor]="true"
+    cursorChar="|"
+    [pauseOnHover]="true"
+    style="display: inline; font-weight: bold; color: #007acc;"
+  ></div>
 
 ```
 
