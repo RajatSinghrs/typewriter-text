@@ -1,6 +1,7 @@
-import { Directive, ElementRef, Input, OnInit, OnDestroy, OnChanges, SimpleChanges} from '@angular/core';
-import {Typewriter } from './typewriter'
+import { Directive, ElementRef, Input, OnInit, OnDestroy, OnChanges, SimpleChanges, Inject, PLATFORM_ID } from '@angular/core';
+import { Typewriter } from './typewriter'
 import { TypewriterOptions } from './typewriter.types';
+import { isPlatformBrowser } from '@angular/common';
 
 
 @Directive({
@@ -23,10 +24,12 @@ export class TypewriterDirective implements OnInit, OnChanges, OnDestroy {
 
   private typewriterInstance?: Typewriter;
 
-  constructor(private el: ElementRef<HTMLElement>) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,private el: ElementRef<HTMLElement>) { }
 
   ngOnInit(): void {
-    this.initTypewriter();
+    if (isPlatformBrowser(this.platformId)) {
+      this.initTypewriter();
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
