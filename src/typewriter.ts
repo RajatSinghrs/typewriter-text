@@ -7,7 +7,6 @@ export class Typewriter {
   private charIndex = 0;
   private isDeleting = false;
   private loopTimeout: any;
-
   private isPaused = false;
   private isStopped = false;
   private status: 'idle' | 'typing' | 'paused' | 'stopped' = 'idle';

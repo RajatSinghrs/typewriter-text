@@ -1,13 +1,7 @@
-import {
-  Directive,
-  ElementRef,
-  Input,
-  OnInit,
-  OnDestroy,
-  OnChanges,
-  SimpleChanges
-} from '@angular/core';
-import { Typewriter, TypewriterOptions } from 'typewriter-text-effect';
+import { Directive, ElementRef, Input, OnInit, OnDestroy, OnChanges, SimpleChanges} from '@angular/core';
+import {Typewriter } from './typewriter'
+import { TypewriterOptions } from './typewriter.types';
+
 
 @Directive({
   selector: '[typewriter]'

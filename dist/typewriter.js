@@ -22,22 +22,7 @@ class Typewriter {
             this.type();
         };
         this.el = el;
-        // this.options = {
-        //   speed: 100,
-        //   deleteSpeed: 50,
-        //   delayBetween: 1000,
-        //   loop: true,
-        //   cursor: true,
-        //   cursorChar: '|',
-        //   ...options,
-        // };
         this.options = Object.assign({ speed: 100, deleteSpeed: 50, delayBetween: 1000, pauseBetweenLoops: 2000, loop: true, cursor: true, cursorChar: '|', startDelay: 0, pauseOnHover: false, randomSpeed: false, autoStart: true, textStyleClass: '', onComplete: () => { } }, options);
-        // if (this.options.cursor) {
-        //   const span = document.createElement('span');
-        //   span.className = 'typewriter-cursor';
-        //   span.textContent = this.options.cursorChar;
-        //   this.el.appendChild(span);
-        // }
         if (this.options.textStyleClass) {
             const span = document.createElement('span');
             span.className = this.options.textStyleClass;
@@ -62,9 +47,6 @@ class Typewriter {
             this.start();
         }
     }
-    // public start() {
-    //   this.type();
-    // }
     start() {
         this.isStopped = false;
         this.status = 'typing';
@@ -75,29 +57,6 @@ class Typewriter {
             this.type();
         }
     }
-    // private type() {
-    //   const currentText = this.options.text[this.index];
-    //   const visibleText = currentText.substring(0, this.charIndex);
-    //   this.el.childNodes[0].textContent = visibleText;
-    //   if (!this.isDeleting) {
-    //     if (this.charIndex < currentText.length) {
-    //       this.charIndex++;
-    //       this.loopTimeout = setTimeout(() => this.type(), this.options.speed);
-    //     } else if (this.options.loop) {
-    //       this.isDeleting = true;
-    //       this.loopTimeout = setTimeout(() => this.type(), this.options.delayBetween);
-    //     }
-    //   } else {
-    //     if (this.charIndex > 0) {
-    //       this.charIndex--;
-    //       this.loopTimeout = setTimeout(() => this.type(), this.options.deleteSpeed);
-    //     } else {
-    //       this.isDeleting = false;
-    //       this.index = (this.index + 1) % this.options.text.length;
-    //       this.loopTimeout = setTimeout(() => this.type(), 200);
-    //     }
-    //   }
-    // }
     type() {
         var _a, _b;
         if (this.isStopped || this.isPaused)
@@ -135,9 +94,6 @@ class Typewriter {
             }
         }
     }
-    // public stop() {
-    //   clearTimeout(this.loopTimeout);
-    // }
     getRandomSpeed() {
         const base = this.isDeleting ? this.options.deleteSpeed : this.options.speed;
         const variation = base * 0.3;
