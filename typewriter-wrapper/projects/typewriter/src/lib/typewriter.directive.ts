@@ -1,11 +1,11 @@
-import { Directive, ElementRef, Input, OnInit, OnDestroy, OnChanges, SimpleChanges, Inject, PLATFORM_ID } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, OnDestroy, OnChanges, SimpleChanges, Inject, PLATFORM_ID, ChangeDetectionStrategy, Renderer2, NgZone } from '@angular/core';
 import { Typewriter } from './typewriter'
 import { TypewriterOptions } from './typewriter.types';
 import { isPlatformBrowser } from '@angular/common';
 
 
 @Directive({
-  selector: '[typewriter]'
+  selector: '[typewriter]',
 })
 export class TypewriterDirective implements OnInit, OnChanges, OnDestroy {
   @Input('typewriter') text: string | string[] = '';
@@ -24,7 +24,7 @@ export class TypewriterDirective implements OnInit, OnChanges, OnDestroy {
 
   private typewriterInstance?: Typewriter;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,private el: ElementRef<HTMLElement>) { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private el: ElementRef<HTMLElement>, private renderer: Renderer2, private ngZone: NgZone) { }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -41,6 +41,7 @@ export class TypewriterDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private initTypewriter() {
+
     const options: TypewriterOptions = {
       text: Array.isArray(this.text) ? this.text : [this.text],
       speed: this.speed,
@@ -56,8 +57,9 @@ export class TypewriterDirective implements OnInit, OnChanges, OnDestroy {
       autoStart: this.autoStart,
       textStyleClass: this.textStyleClass,
     };
-
-    this.typewriterInstance = new Typewriter(this.el.nativeElement, options);
+    this.ngZone.runOutsideAngular(() => {
+      this.typewriterInstance = new Typewriter(this.el.nativeElement, options);
+    });
   }
 
   ngOnDestroy(): void {
