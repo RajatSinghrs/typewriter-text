@@ -1,0 +1,11 @@
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}

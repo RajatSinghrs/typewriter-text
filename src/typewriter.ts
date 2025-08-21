@@ -73,8 +73,10 @@ export class Typewriter {
     const currentText = this.options.text[this.index];
     const visibleText = currentText.substring(0, this.charIndex);
 
-    const textNode = this.el.childNodes[0];
-    textNode.textContent = visibleText;
+    // const textNode = this.el.childNodes[0];
+    // textNode.textContent = visibleText;
+    const textNode = this.el.firstChild as Text;
+if (textNode) textNode.textContent = visibleText;
 
     const nextSpeed = this.options.randomSpeed
       ? this.getRandomSpeed()

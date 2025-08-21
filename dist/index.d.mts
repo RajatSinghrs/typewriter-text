@@ -1,5 +1,21 @@
-import { TypewriterOptions } from './typewriter.types';
-export declare class Typewriter {
+interface TypewriterOptions {
+    text: string[];
+    speed?: number;
+    deleteSpeed?: number;
+    delayBetween?: number;
+    pauseBetweenLoops?: number;
+    loop?: boolean;
+    cursor?: boolean;
+    cursorChar?: string;
+    startDelay?: number;
+    pauseOnHover?: boolean;
+    randomSpeed?: boolean;
+    autoStart?: boolean;
+    textStyleClass?: string;
+    onComplete?: () => void;
+}
+
+declare class Typewriter {
     private el;
     private options;
     private index;
@@ -21,3 +37,5 @@ export declare class Typewriter {
     isRunning(): boolean;
     destroy(): void;
 }
+
+export { Typewriter, type TypewriterOptions, Typewriter as default };
